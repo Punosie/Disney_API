@@ -1,7 +1,7 @@
 import requests
-from db import create_database
-
-def get_info():
+from db import create_database,insert_data
+     
+def input_data():
     base_url = 'https://api.disneyapi.dev/character'
     next_page = base_url
     while next_page:
@@ -9,12 +9,12 @@ def get_info():
         if res.status_code == 200:
             data = res.json()
             for character in data['data']:
-                char_id = character['_id']
-                print("Character ID:", char_id)
+                insert_data(character)
             next_page = data['info']['nextPage']
         else:
             print(f"Error Status Code: {res.status_code}")
             return None
         
-create_database()
-get_info()
+if __name__ == "__main__":
+    input_data()
+    print('-------------------\n\nDATA INSERTED\n\n-------------------')

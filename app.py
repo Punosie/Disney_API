@@ -1,4 +1,5 @@
 import requests
+from db import create_database
 
 def get_info():
     base_url = 'https://api.disneyapi.dev/character'
@@ -14,5 +15,6 @@ def get_info():
         else:
             print(f"Error Status Code: {res.status_code}")
             return None
-
+        
+create_database()
 get_info()

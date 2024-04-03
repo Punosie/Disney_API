@@ -2,6 +2,6 @@
 base = "dark"
 font = "monospace"
 primaryColor="black"
-backgroundColor="Pink"
+backgroundColor="Black"
 secondaryBackgroundColor="#F0F2F6"
-textColor="Fuchsia"
+textColor="Pink"
